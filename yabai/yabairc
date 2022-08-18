@@ -1,0 +1,54 @@
+# the scripting-addition must be loaded manually if
+# you are running yabai on macOS Big Sur. Uncomment
+# the following line to have the injection performed
+# when the config is executed during startup.
+#
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+yabai -m config auto_balance                 on
+yabai -m config focus_follows_mouse          autoraise
+yabai -m config layout                       bsp
+yabai -m config mouse_follows_focus          on
+yabai -m config split_ratio                  0.50
+yabai -m config window_placement             second_child
+
+# mission-control desktop labels
+yabai -m space 1 --label code
+yabai -m space 2 --label web
+yabai -m space 3 --label notes
+yabai -m space 4 --label chrome
+yabai -m space 6 --label slack
+yabai -m space 7 --label mail 
+yabai -m space 8 --label media
+yabai -m space 9 --label vpn
+yabai -m space 10 --label todo
+
+# specific space settings
+yabai -m config --space mail  layout        stack
+yabai -m config --space notes  layout        stack
+yabai -m config --space web  layout        bsp
+yabai -m config --space code  layout        bsp
+yabai -m config --space chrome  layout        bsp
+yabai -m config --space todo  layout        bsp
+
+# window rules
+yabai -m rule --add app="^Microsoft Outlook$" space=mail
+yabai -m rule --add app="^Slack$" space=slack
+yabai -m rule --add app="^Azure VPN Client$" space=vpn
+yabai -m rule --add app="^iTerm2$" space=code
+yabai -m rule --add app="^kitty$" space=code
+yabai -m rule --add app="^Obsidian$" space=notes
+yabai -m rule --add app="^Trello$" space=todo
+yabai -m rule --add app="^Firefox$" space=web
+yabai -m rule --add app="^Google Chrome$" space=chrome
+yabai -m rule --add app="^Postman$" space=chrome
+yabai -m rule --add app="^Spotify$" space=media
+
+# override rules
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+
