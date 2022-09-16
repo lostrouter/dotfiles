@@ -22,6 +22,7 @@ require('airline')
 require('ALE')
 require('CoC')
 require('nvimtree')
+require('vimtest')
 
 
 -- https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim

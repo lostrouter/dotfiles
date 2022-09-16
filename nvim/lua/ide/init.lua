@@ -17,6 +17,7 @@ vim.o.wrap = false
 vim.o.swapfile = false
 
 vim.o.clipboard = "unnamed"
+vim.o.exrc = false
 
 -- line numbers
 vim.o.number = true
@@ -51,4 +52,5 @@ vim.o.undodir = HOME.."/.nvim/undodir"
 vim.o.undofile = true
 vim.o.undolevels = 1000 -- maximum number of changes that can be undone
 vim.o.undoreload = 10000 -- maximum number lines to save for undo on a buffer reload
+
 

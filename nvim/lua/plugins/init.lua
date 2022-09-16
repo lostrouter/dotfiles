@@ -10,7 +10,6 @@ Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'dense-analysis/ale'
 Plug 'vim-test/vim-test'
-Plug 'preservim/vimux'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
@@ -26,6 +25,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dhruvasagar/vim-zoom'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'MunifTanjim/exrc.nvim'
+Plug 'MunifTanjim/nui.nvim'
 
 " git plugins
 Plug 'tpope/vim-fugitive'

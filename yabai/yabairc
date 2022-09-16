@@ -8,6 +8,8 @@
 
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+yabai -m signal --add event=display_removed action="sudo yabai --load-sa"
+yabai -m signal --add event=display_added action="sudo yabai --load-sa"
 
 yabai -m config auto_balance                 on
 yabai -m config focus_follows_mouse          autoraise
@@ -28,12 +30,13 @@ yabai -m space 9 --label vpn
 yabai -m space 10 --label todo
 
 # specific space settings
-yabai -m config --space mail  layout        stack
-yabai -m config --space notes  layout        stack
-yabai -m config --space web  layout        bsp
-yabai -m config --space code  layout        bsp
-yabai -m config --space chrome  layout        bsp
-yabai -m config --space todo  layout        bsp
+yabai -m config --space mail --layout stack
+yabai -m config --space slack --layout stack
+yabai -m config --space notes --layout bsp
+yabai -m config --space web --layout bsp
+yabai -m config --space code --layout bsp
+yabai -m config --space chrome --layout bsp
+yabai -m config --space todo --layout bsp
 
 # window rules
 yabai -m rule --add app="^Microsoft Outlook$" space=mail
@@ -47,6 +50,7 @@ yabai -m rule --add app="^Firefox$" space=web
 yabai -m rule --add app="^Google Chrome$" space=chrome
 yabai -m rule --add app="^Postman$" space=chrome
 yabai -m rule --add app="^Spotify$" space=media
+yabai -m rule --add app="^Toggl Track$" space=todo
 
 # override rules
 yabai -m rule --add app="^System Preferences$" manage=off
